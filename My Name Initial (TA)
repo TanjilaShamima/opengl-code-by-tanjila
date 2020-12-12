@@ -1,0 +1,204 @@
+#include<windows.h>
+#ifdef APPLE
+#include <GLUT/glut.h>
+#else
+#include <GL/glut.h>
+#endif
+
+#include <stdlib.h>
+#include <math.h>
+
+
+
+void initOpenGl()
+{
+    glClearColor(0.5,0.5,0.5,1);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluOrtho2D(0,700,0,500);
+    glMatrixMode(GL_MODELVIEW);
+}
+
+
+
+void artLastChar()
+{
+
+
+//Left Part of A
+
+    glColor3f(1.0,1.0,0.0);
+
+
+  glPointSize(4.0);
+
+     glBegin(GL_POLYGON);
+
+        //bottom
+          glVertex2i (350, 200);
+          glVertex2i (360, 200);
+
+          //top
+          glVertex2i (450, 400);
+          glVertex2i (460, 400);
+        //left
+          glVertex2i (450, 400);
+          glVertex2i (350, 200);
+        //right
+          glVertex2i (460, 400);
+          glVertex2i (360, 200);
+
+          //glVertex2i (10, -50);
+
+    glEnd();
+
+
+
+
+    //Right part of A
+
+    glColor3f(1.0,1.0,0.0);
+
+
+  glPointSize(4.0);
+
+     glBegin(GL_POLYGON);
+//bottom
+
+          glVertex2i (550, 200);
+          glVertex2i (560, 200);
+
+          //top
+          glVertex2i (450, 400);
+          glVertex2i (460, 400);
+        //left
+          glVertex2i (450, 400);
+          glVertex2i (550, 200);
+        //right
+          glVertex2i (460, 400);
+          glVertex2i (560, 200);
+
+          //glVertex2i (10, -50);
+
+    glEnd();
+
+
+
+    //Middle part of A
+
+     glColor3f(1.0,1.0,0.0);
+
+
+  glPointSize(4.0);
+
+     glBegin(GL_POLYGON);
+//bottom
+
+          glVertex2i (400, 300);
+          glVertex2i (510, 300);
+
+          //top
+          glVertex2i (410, 310);
+          glVertex2i (500, 310);
+        //left
+          glVertex2i (410, 310);
+          glVertex2i (400, 300);
+        //right
+          glVertex2i (500, 310);
+          glVertex2i (510, 300);
+
+          //glVertex2i (10, -50);
+
+    glEnd();
+
+
+
+
+}
+
+void display()
+{
+
+  glClear(GL_COLOR_BUFFER_BIT);
+
+
+
+  //Top part of T
+  glColor3f(1.0,1.0,0.0);
+
+
+  glPointSize(4.0);
+
+     glBegin(GL_POLYGON);
+//bottom
+
+          glVertex2i (20, 400);
+          glVertex2i (320, 400);
+
+          //top
+          glVertex2i (20, 410);
+          glVertex2i (320, 410);
+        //left
+          glVertex2i (20, 410);
+          glVertex2i (20, 400);
+        //right
+          glVertex2i (320, 410);
+          glVertex2i (320, 400);
+
+          //glVertex2i (10, -50);
+
+    glEnd();
+
+
+    //Bottom part of T
+
+
+    glColor3f(1.0,1.0,0.0);
+
+
+  glPointSize(4.0);
+
+     glBegin(GL_POLYGON);
+//bottom
+
+          glVertex2i (170, 200);
+          glVertex2i (180, 200);
+
+          //top
+          glVertex2i (170, 400);
+          glVertex2i (180, 400);
+        //left
+          glVertex2i (170, 400);
+          glVertex2i (180, 400);
+        //right
+          glVertex2i (180, 400);
+          glVertex2i (180, 200);
+
+          //glVertex2i (10, -50);
+
+    glEnd();
+
+
+
+
+
+   artLastChar();
+  glutSwapBuffers();
+  glFlush();
+
+
+}
+
+int main(int argc, char **argv)
+{
+    glutInit(&argc,argv);
+    glutInitDisplayMode(GLUT_DOUBLE|GLUT_RGBA|GLUT_DEPTH);
+    glutInitWindowSize(700,700);
+    glutInitWindowPosition(0,0);
+    glutCreateWindow("Name : Tanjila Akter Initial : (TA)");
+    initOpenGl();
+    glutDisplayFunc(display);
+    glutIdleFunc(display);
+    glutMainLoop();
+    return 0;
+}
